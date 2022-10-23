@@ -236,8 +236,9 @@ contract WardenPledge is Ownable, Pausable, ReentrancyGuard {
         // Calculated the effective Pledge duration
         uint256 boostDuration = endTimestamp - block.timestamp;
 
-        // Check that the user has enough boost delegation available
+        // Check that the user has enough boost delegation available & set the correct allowance to this contract
         delegationBoost.checkpoint_user(user);
+        if(delegationBoost.allowance(user, address(this)) < amount) revert Errors.InsufficientAllowance();
         if(delegationBoost.delegable_balance(user) < amount) revert Errors.CannotDelegate();
 
         // Check that this will not go over the Pledge target of votes

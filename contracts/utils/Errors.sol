@@ -40,6 +40,7 @@ library Errors {
     error PercentOverMax();
     error CannotDelegate();
     error DurationTooShort();
+    error InsufficientAllowance();
 
     // Math Errors
     error NumberExceed64Bits();
