@@ -10,9 +10,9 @@
 
 ## Description 
 
-Paladin builds different products revolving around tokenomics, voting power delegation & veTokens (more info on the [website](https://paladin.vote)). Warden is a system focusing on veTokens, with the Warden Boost market to purchase boosting power from veCRV holders to optimize your Curve LP rewards dsitribution, and Quest to offer a better system for Gauge votes acquisition (more infos on Quest [here](https://doc.paladin.vote/warden-quest/introduction)).
+Paladin builds different products revolving around tokenomics, voting power delegation & veTokens (more info on the [website](https://paladin.vote)). Warden is a system focusing on veTokens, with the Warden Boost market to purchase boosting power from veCRV holders to optimize your Curve LP rewards distribution, and Quest to offer a better system for Gauge votes acquisition (more info on Quest [here](https://doc.paladin.vote/warden-quest/introduction)).
 This Contest is aimed at the new piece to be added to the Warden system, called Pledge, with the goal of providing another type of marketplace for veCRV boosting power, through a new logic that mixes pieces from the Boost market and from Quest.
-(The Pledge smart contract is based on the logic of Curve's veBoost, by using the BoostV2 contract to delegate boosting power that has been approved to Warden Pledge by the veCRV holder. The Curve veBoost contracts & tests van be found [here](https://github.com/curvefi/curve-veBoost))
+(The Pledge smart contract is based on the logic of Curve's veBoost, by using the BoostV2 contract to delegate boosting power that has been approved to Warden Pledge by the veCRV holder. The Curve veBoost contracts & tests can be found [here](https://github.com/curvefi/curve-veBoost)).
 
 
 ## Scope
@@ -49,10 +49,10 @@ This Contest is aimed at the new piece to be added to the Warden system, called 
 
 There is only 1 contract in the scope of this contest: `WardenPledge`
 
-### WardenPledge (316 sloc)
+### WardenPledge (317 sloc)
 
-WardenPledge is a contract supposed to receive ERC20 incentives (ERC20 tokens must be whitelsited before being deposited) that will be distributed to users that delegate veCRV boost power (using the Boostv2 contract) through the Warden Pledge contract. DAOs/Protocols/etc.. will be able to set a Pledge with a given reward per vote delegated, for a fixed duration, and pay only for the boost effectively received (delegators rewards calculations take in account the boost delegation decrease over time).  
-For more infos, see "System Overview".  
+WardenPledge is a contract supposed to receive ERC20 incentives (ERC20 tokens must be whitelisted before being deposited) that will be distributed to users that delegate veCRV boost power (using the Boostv2 contract) through the Warden Pledge contract. DAOs/Protocols/etc.. will be able to set a Pledge with a given reward per vote delegated, for a fixed duration, and pay only for the boost effectively received (delegators rewards calculations take in account the boost delegation decrease over time).  
+For more info, see "System Overview".  
 
 External Calls:
 - To `ERC20` contracts (through the `SafeERC20` lib):
@@ -85,7 +85,7 @@ Libraires & Dependencies:
 
 ## System Overview
 
-New version of the Warden Boost Market, based on a mix between the current Warden v2 logic and Warden Quest base logic (see our [Docs](https://doc.paladin.vote) for more infos on Warden & Quest).  
+New version of the Warden Boost Market, based on a mix between the current Warden v2 logic and Warden Quest base logic (see our [Docs](https://doc.paladin.vote) for more info on Warden & Quest).  
   
 Reward tokens (`ERC20`) must be whitelisted before being used as a rewards for Pledges.  
 Pledges have a target amount of veCRV to reach (sum of the receiving address veCRV balance + any veCRV delegated through the veBoost system) and an amount of rewards for each veCRV delegated through the Pledge. Users joining the Pledge (delegating to the Pledge receiver address) will always receive a fix amount rewards, based on the decreasing amount of veCRV delegated in their Boost (meaning that for a Boost of 100 veCRV over 2 weeks, the user rewards are calculated based on the decrease from 100 to 0 delegated through the 2 weeks).  
