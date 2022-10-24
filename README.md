@@ -8,13 +8,50 @@
 - Ends October 30, 2022 20:00 UTC
 
 
+## Description 
+
+Paladin builds different products revolving around tokenomics, voting power delegation & veTokens (more info on the [website](https://paladin.vote)). Warden is a system focusing on veTokens, with the Warden Boost market to purchase boosting power from veCRV holders to optimize your Curve LP rewards dsitribution, and Quest to offer a better system for Gauge votes acquisition (more infos on Quest [here](https://doc.paladin.vote/warden-quest/introduction)).
+This Contest is aimed at the new piece to be added to the Warden system, called Pledge, with the goal of providing another type of marketplace for veCRV boosting power, through a new logic that mixes pieces from the Boost market and from Quest.
+(The Pledge smart contract is based on the logic of Curve's veBoost, by using the BoostV2 contract to delegate boosting power that has been approved to Warden Pledge by the veCRV holder. The Curve veBoost contracts & tests van be found [here](https://github.com/curvefi/curve-veBoost))
+
+
+## Scope
+### Files in scope
+|File|[SLOC](#nowhere "(nSLOC, SLOC, Lines)")|[Coverage](#nowhere "(Lines hit / Total)")|
+|:-|:-:|:-:|
+|_Contracts (1)_|
+|[contracts/WardenPledge.sol](https://github.com/code-423n4/2022-10-paladin/blob/969832140a3311ab4b3376582a2790282cb4007d/contracts/WardenPledge.sol) [Σ](#nowhere "Unchecked Blocks")|[316](#nowhere "(nSLOC:298, SLOC:316, Lines:670)")|[100.00%](#nowhere "(Hit:163 / Total:163)")|
+|Total (over 1 file):| [316](#nowhere "(nSLOC:298, SLOC:316, Lines:670)")| [100.00%](#nowhere "Hit:163 / Total:163")|
+
+
+### All other source contracts (not in scope)
+|File|[SLOC](#nowhere "(nSLOC, SLOC, Lines)")|[Coverage](#nowhere "(Lines hit / Total)")|
+|:-|:-:|:-:|
+|_Contracts (1)_|
+|[contracts/utils/Owner.sol](https://github.com/code-423n4/2022-10-paladin/blob/969832140a3311ab4b3376582a2790282cb4007d/contracts/utils/Owner.sol)|[23](#nowhere "(nSLOC:23, SLOC:23, Lines:38)")|-|
+|_Abstracts (4)_|
+|[contracts/oz/utils/Context.sol](https://github.com/code-423n4/2022-10-paladin/blob/969832140a3311ab4b3376582a2790282cb4007d/contracts/oz/utils/Context.sol)|[9](#nowhere "(nSLOC:9, SLOC:9, Lines:24)")|-|
+|[contracts/oz/utils/ReentrancyGuard.sol](https://github.com/code-423n4/2022-10-paladin/blob/969832140a3311ab4b3376582a2790282cb4007d/contracts/oz/utils/ReentrancyGuard.sol)|[15](#nowhere "(nSLOC:15, SLOC:15, Lines:63)")|-|
+|[contracts/oz/utils/Ownable.sol](https://github.com/code-423n4/2022-10-paladin/blob/969832140a3311ab4b3376582a2790282cb4007d/contracts/oz/utils/Ownable.sol)|[31](#nowhere "(nSLOC:31, SLOC:31, Lines:83)")|-|
+|[contracts/oz/utils/Pausable.sol](https://github.com/code-423n4/2022-10-paladin/blob/969832140a3311ab4b3376582a2790282cb4007d/contracts/oz/utils/Pausable.sol)|[35](#nowhere "(nSLOC:35, SLOC:35, Lines:105)")|-|
+|_Libraries (3)_|
+|[contracts/utils/Errors.sol](https://github.com/code-423n4/2022-10-paladin/blob/969832140a3311ab4b3376582a2790282cb4007d/contracts/utils/Errors.sol)|[34](#nowhere "(nSLOC:34, SLOC:34, Lines:47)")|-|
+|[contracts/oz/libraries/SafeERC20.sol](https://github.com/code-423n4/2022-10-paladin/blob/969832140a3311ab4b3376582a2790282cb4007d/contracts/oz/libraries/SafeERC20.sol) [Σ](#nowhere "Unchecked Blocks")|[58](#nowhere "(nSLOC:37, SLOC:58, Lines:98)")|-|
+|[contracts/oz/utils/Address.sol](https://github.com/code-423n4/2022-10-paladin/blob/969832140a3311ab4b3376582a2790282cb4007d/contracts/oz/utils/Address.sol) [🖥](#nowhere "Uses Assembly") [👥](#nowhere "DelegateCall")|[81](#nowhere "(nSLOC:56, SLOC:81, Lines:222)")|-|
+|_Interfaces (3)_|
+|[contracts/interfaces/IVotingEscrow.sol](https://github.com/code-423n4/2022-10-paladin/blob/969832140a3311ab4b3376582a2790282cb4007d/contracts/interfaces/IVotingEscrow.sol)|[13](#nowhere "(nSLOC:13, SLOC:13, Lines:25)")|-|
+|[contracts/oz/interfaces/IERC20.sol](https://github.com/code-423n4/2022-10-paladin/blob/969832140a3311ab4b3376582a2790282cb4007d/contracts/oz/interfaces/IERC20.sol)|[15](#nowhere "(nSLOC:11, SLOC:15, Lines:82)")|-|
+|[contracts/interfaces/IBoostV2.sol](https://github.com/code-423n4/2022-10-paladin/blob/969832140a3311ab4b3376582a2790282cb4007d/contracts/interfaces/IBoostV2.sol)|[19](#nowhere "(nSLOC:19, SLOC:19, Lines:27)")|-|
+|Total (over 11 files):| [333](#nowhere "(nSLOC:283, SLOC:333, Lines:814)")| -|
+
+
 ## Smart Contracts
 
 There is only 1 contract in the scope of this contest: `WardenPledge`
 
-### WardenPledge (410 sloc)
+### WardenPledge (316 sloc)
 
-ardenPledge is a contract supposed to receive ERC20 incentives (ERC20 tokens must be whitelsited before being deposited) that will be distributed to users that delegate veCRV boost power (using the Boostv2 contract) through the Warden Pledge contract. DAOs/Protocols/etc.. will be able to set a Pledge with a given reward per vote delegated, for a fixed duration, and pay only for the boost effectively received (delegators rewards calculations take in account the boost delegation decrease over time).  
+WardenPledge is a contract supposed to receive ERC20 incentives (ERC20 tokens must be whitelsited before being deposited) that will be distributed to users that delegate veCRV boost power (using the Boostv2 contract) through the Warden Pledge contract. DAOs/Protocols/etc.. will be able to set a Pledge with a given reward per vote delegated, for a fixed duration, and pay only for the boost effectively received (delegators rewards calculations take in account the boost delegation decrease over time).  
 For more infos, see "System Overview".  
 
 External Calls:
@@ -33,7 +70,7 @@ External Calls:
 - To `veCRV` (`0x5f3b5DfEb7B28CDbD7FAba78963EE202a494e2A2`):
   - line 209: `uint256 amount = (votingEscrow.balanceOf(msg.sender) * percent) / MAX_PCT;`
   - line 324: `vars.votesDifference = targetVotes - votingEscrow.balanceOf(receiver);`
-- To `Boostv2` (`0xD0921691C7DEBc698e6e372c6f74dc01fc9d3778`):
+- To `BoostV2` (`0xD0921691C7DEBc698e6e372c6f74dc01fc9d3778`):
   - line 240: `delegationBoost.checkpoint_user(user);`
   - line 241: `delegationBoost.delegable_balance(user)`
   - line 244: `delegationBoost.adjusted_balance_of(pledgeParams.receiver);`
@@ -48,7 +85,7 @@ Libraires & Dependencies:
 
 ## System Overview
 
-New version of the Warden Market, based on a mix between the current Warden Market and Warden Quest base logic (see our [Docs](doc.paladin.vote) for more infos on Warden & Quest).  
+New version of the Warden Boost Market, based on a mix between the current Warden v2 logic and Warden Quest base logic (see our [Docs](https://doc.paladin.vote) for more infos on Warden & Quest).  
   
 Reward tokens (`ERC20`) must be whitelisted before being used as a rewards for Pledges.  
 Pledges have a target amount of veCRV to reach (sum of the receiving address veCRV balance + any veCRV delegated through the veBoost system) and an amount of rewards for each veCRV delegated through the Pledge. Users joining the Pledge (delegating to the Pledge receiver address) will always receive a fix amount rewards, based on the decreasing amount of veCRV delegated in their Boost (meaning that for a Boost of 100 veCRV over 2 weeks, the user rewards are calculated based on the decrease from 100 to 0 delegated through the 2 weeks).  
@@ -64,7 +101,7 @@ To start, make sure you have `node` & `npm` installed :
 * `node` - tested with v16
 * `npm` - tested with v8.1
 
-Then, copy `.env.example` and fill all varaibles.  
+Then, copy `.env.example` and fill all variables.  
 
 Then, run :  
 ```
@@ -74,6 +111,8 @@ This will install `Hardhat`, `Ethers v5`, and all the hardhat plugins used in th
 
 
 ## Tests
+
+! Follow the steps in "Set up environment" before trying to run the tests.  
 
 Tests can be found in the `./test` directory.
 

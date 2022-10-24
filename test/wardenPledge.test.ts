@@ -2411,6 +2411,23 @@ describe('Warden Pledge contract tests', () => {
 
         });
 
+        it(' should fail if not given enoug allowance to the contract', async () => {
+
+            const current_ts = BigNumber.from((await provider.getBlock(await provider.getBlockNumber())).timestamp)
+            const boost_end_timestamp = getRoundedTimestamp(current_ts.add(WEEK.mul(boost_week_duration1)))
+
+            await expect(
+                wardenPledge.connect(delegator1).pledge(pledge_id, deleg_amount1, boost_end_timestamp)
+            ).to.be.revertedWith('InsufficientAllowance')
+
+            await delegationBoost.connect(delegator1).approve(wardenPledge.address, deleg_amount1.div(2))
+
+            await expect(
+                wardenPledge.connect(delegator1).pledge(pledge_id, deleg_amount1, boost_end_timestamp)
+            ).to.be.revertedWith('InsufficientAllowance')
+
+        });
+
     });
 
     describe('pledgePercent', async () => {
