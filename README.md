@@ -1,6 +1,10 @@
 # Paladin - Warden Pledges contest details
-- $28,500 USDC main award pot
-- $1,500 USDC gas optimization award pot
+- Total Prize Pool: $33,500 USDC
+  - HM awards: $25,500 USDC
+  - QA report awards: $3,000 USDC
+  - Gas report awards: $1,500 USDC
+  - Judge + presort awards: $3,000 USDC
+  - Scout awards: $500 USDC
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2022-10-paladin-warden-pledges-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
