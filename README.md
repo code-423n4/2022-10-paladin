@@ -11,6 +11,11 @@
 - Starts October 27, 2022 20:00 UTC
 - Ends October 30, 2022 20:00 UTC
 
+## C4udit / Publicly Known Issues
+
+The C4audit output for the contest can be found [here](https://gist.github.com/Picodes/2d23ed5128036f1b475654d5bcca9eed).
+
+*Note for C4 wardens: Anything included in the C4udit output is considered a publicly known issue and is ineligible for awards.*
 
 ## Description 
 
