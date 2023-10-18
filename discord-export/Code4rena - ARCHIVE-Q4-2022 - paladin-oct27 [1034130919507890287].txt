@@ -1,0 +1,541 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q4-2022 / paladin-oct27
+==============================================================
+
+[10/24/2022 15:48] itsmetechjay (pinned)
+👋 Hello and welcome to the contest channel for the $33,500 USDC **Paladin - Warden Pledges** contest!
+
+📆 Contest opens Thursday, 27 October 2022 20:00 (20:00 UTC) and runs through Sunday, 30 October 2022 20:00 (20:00 UTC) (3 days).
+
+Please give a warm welcome to the Paladin team, particularly @Kogaroshi who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-10-paladin-warden-pledges-contest
+
+{Reactions}
+C4Keycap (2) 
+
+[10/25/2022 20:14] itsmetechjay
+Pinned a message.
+
+
+[10/27/2022 18:39] deathstore
+there is no 5 days between 27 and 30…
+
+
+[10/27/2022 19:04] minh___
+3 days is likely correct, the 5 days mentioned above is probably a copy paste error
+
+{Reactions}
+thankyou 
+
+[10/27/2022 19:29] itsmetechjay
+Yes that’s a copy paste error. Will adjust.
+
+
+[10/27/2022 20:06] thepicodes (pinned)
+**Automated findings:** https://gist.github.com/Picodes/2d23ed5128036f1b475654d5bcca9eed
+
+{Reactions}
+thankyou 
+
+[10/27/2022 20:08] itsmetechjay
+Pinned a message.
+
+
+[10/27/2022 20:08] itsmetechjay (pinned)
+@🐺wardens  - please note that c4udit output has been posted above and added to pinned posts. These are considered publicly known issues and are not eligible for awards.
+
+**Automated findings:** https://gist.github.com/Picodes/2d23ed5128036f1b475654d5bcca9eed
+
+This will also be linked in the contest README file shortly.
+
+{Reactions}
+C4Keycap (6) 
+
+[10/27/2022 20:08] itsmetechjay
+Pinned a message.
+
+
+[10/27/2022 20:36] chaduke3730
+New to this project any introductory materials that describe the whole picture?
+
+
+[10/27/2022 20:40] kogaroshi
+https://doc.paladin.vote/warden/boost-market to start with, then the README of the Contest
+
+{Embed}
+https://doc.paladin.vote/warden/boost-market
+Boost Market
+Code4rena - ARCHIVE-Q4-2022 - paladin-oct27 [1034130919507890287].txt_Files/Y3YS5GyhBXfenz4HEN3P-DC72A.png
+
+{Reactions}
+👀 (2) 
+
+[10/27/2022 21:02] chaduke3730
+Thanks
+
+
+[10/27/2022 21:02] chaduke3730
+@Kogaroshi
+
+
+[10/28/2022 03:35] chaduke3730
+Does each pledge mean a Quest?
+
+
+[10/28/2022 08:19] Junnon#3182
+@Kogaroshii sent friend request, want to DM ser.
+
+
+[10/28/2022 08:56] ozy42
+Tests are really really slow 🥲
+
+
+[10/28/2022 08:58] ozy42
+ok it's because of the resetFork() + redeployment between each tests
+
+
+[10/28/2022 09:23] rvierdiiev
+@Kogaroshi pls, accept friend request
+
+
+[10/28/2022 09:46] 0x1f8b
+The "known issues" contains out of scope contracts, in order to make the work easier to the wardens it should contains only the scoped ones I think
+
+
+[10/28/2022 09:48] bizzyvinci
+@Kogaroshi, `npm run test` does not work
+
+
+[10/28/2022 09:59] ozy42
+replace your rpc endpoint in hadhat.config and utils.ts (resetFork())
+
+{Reactions}
+👍 
+
+[10/28/2022 09:59] Franfran#5067
+isn't it caching ? its too bad
+
+
+[10/28/2022 10:00] ozy42
+i'm using describe.only to target only function i test , but yes it's not very good :/
+
+
+[10/28/2022 10:04] ozy42
+I was an Hardhat maxi, now i prefer Foundry lol
+
+
+[10/28/2022 10:10] Franfran#5067
+same
+
+
+[10/28/2022 11:30] kogaroshi
+Just accepted all requests
+
+
+[10/28/2022 15:24] saksham#7993
+is there any good documentation for the boostv2 curve contract
+
+
+[10/28/2022 16:01] usf1970
+Hello, can delegationBoost contract be considered trusted?
+
+
+[10/28/2022 17:33] jat4100
+Same question
+
+
+[10/28/2022 18:35] codingsh
+I don't consider him reliable, but I believe we need to focus on the main contract
+
+
+[10/28/2022 19:40] lukejohn_
+where can I find the contract for DelegrationBoost?
+
+
+[10/28/2022 19:41] lukejohn_
+/** @notice Address of the Delegation Boost contract */
+    IBoostV2 public delegationBoost;
+
+
+[10/28/2022 19:41] lukejohn_
+thanks
+
+
+[10/28/2022 20:14] kogaroshi
+Hey everyone, all the documentation and source for Boostv2 (called delegationBoost our contract) can be found here: https://github.com/curvefi/curve-veBoost
+
+This contract isn't to be 100% trusted, but you can refer to the tests in the Boostv2 repo to check how the contract behaves
+
+{Embed}
+https://github.com/curvefi/curve-veBoost
+GitHub - curvefi/curve-veBoost: Curve veCRV Boost Delegation
+Curve veCRV Boost Delegation. Contribute to curvefi/curve-veBoost development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2022 - paladin-oct27 [1034130919507890287].txt_Files/curve-veBoost-0128E
+
+{Reactions}
+👀 (3) 💯 (2) 👍 
+
+[10/28/2022 20:17] ladboy233
+Thanks! This is helpful!
+
+
+[10/28/2022 22:13] chaduke3730
+Great will read it tonight
+
+
+[10/28/2022 23:39] chaduke3730
+How does the delegationBoost interact with the votingEscrow contract when the boost is called?    delegationBoost.boost(
+            pledgeParams.receiver,
+            amount,
+            endTimestamp,
+            user
+        );
+
+
+[10/28/2022 23:41] chaduke3730
+Does it combine all balances (this receiver and all pledge to this receiver?
+
+
+[10/28/2022 23:41] chaduke3730
+To calculate .adjusted_balance_of(pl?
+
+
+[10/28/2022 23:42] kogaroshi
+Boostv2 is a wrapper around veCRV, so other contracts fetch the balance  with delegation from Boostv2 (the adjusted balance, based on veCRV balance with all delegation received etc)
+
+
+[10/28/2022 23:42] chaduke3730
+Thanks
+
+
+[10/28/2022 23:43] chaduke3730
+I think i might have found some vulnerability
+
+
+[10/28/2022 23:43] chaduke3730
+I will write the report tonight
+
+
+[10/28/2022 23:43] kogaroshi
+See https://github.com/curvefi/curve-veBoost/blob/master/contracts/BoostV2.vy#L168 for the logic from Boostv2
+
+{Embed}
+https://github.com/curvefi/curve-veBoost/blob/master/contracts/BoostV2.vy
+curve-veBoost/BoostV2.vy at master · curvefi/curve-veBoost
+Curve veCRV Boost Delegation. Contribute to curvefi/curve-veBoost development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2022 - paladin-oct27 [1034130919507890287].txt_Files/curve-veBoost-0128E
+
+
+[10/28/2022 23:43] chaduke3730
+Thanks again
+
+
+[10/28/2022 23:49] chaduke3730
+So the votingEscrow variable refers to  veCRV?
+
+
+[10/29/2022 00:07] kogaroshi
+Yup
+
+
+[10/29/2022 02:50] ladboy233
+Anyone has trouble compiling the test in windows?
+
+{Reactions}
+🖐️ 
+
+[10/29/2022 11:43] ladboy233
+@Kogaroshi May I please DM you?
+
+
+[10/29/2022 11:43] ladboy233
+Thanks!
+
+
+[10/29/2022 17:16] anonnp
+https://doc.paladin.vote/warden/how-to-use-warden
+Are the docs under this section up to date
+
+{Embed}
+https://doc.paladin.vote/warden/how-to-use-warden
+How to Use Warden
+Code4rena - ARCHIVE-Q4-2022 - paladin-oct27 [1034130919507890287].txt_Files/a1zrh1eJ808Yej4h0rbL-34084.png
+
+
+[10/29/2022 19:33] kogaroshi
+For Warden v2 yes, for Pledge no
+
+
+[10/30/2022 09:49] Franfran#5067
+@Kogaroshi looks like you need to accept our friend request in order to PM.
+
+
+[10/30/2022 10:32] Franfran#5067
+who is gonna be the `chestAddress` ?
+
+
+[10/30/2022 11:52] jm217
+@Kogaroshi struggling with the test on Windows
+
+
+[10/30/2022 11:57] kogaroshi
+What error message are you getting ?
+
+
+[10/30/2022 11:57] jm217
+```
+
+Error HH110: Invalid JSON-RPC response received: {"message":"Not Found","logref":null,"path":null,"_links":{"self":{"href":"/v2/","templated":false,"profile":null,"deprecation":null,"title":null,"hreflang":null,"type":null,"name":null}},"_embedded":{"errors":[{"message":"Page Not Found","logref":null,"path":null,"_links":{},"_embedded":{}}]}}
+
+```
+
+
+[10/30/2022 11:58] jm217
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2022 - paladin-oct27 [1034130919507890287].txt_Files/screenshot_74-3EDB6.png
+
+
+[10/30/2022 11:59] kogaroshi
+Did you fill the .env file with an Alchemy API Key ?
+
+{Reactions}
+🧠 
+
+[10/30/2022 11:59] jm217
+🙂 no
+
+
+[10/30/2022 11:59] jm217
+i will do it and try again
+
+
+[10/30/2022 13:25] asparuhdamyanov
+why ?
+
+
+[10/30/2022 13:30] jm217
+@Kogaroshi do you have a spare alchemy key by any chance that you can share via DM? Seems like Alchemy signup is not working atm
+
+
+[10/30/2022 13:32] kogaroshi
+Sorry, the one I use currently is already used by our internal team, can't share that one
+
+{Reactions}
+👍 
+
+[10/30/2022 13:33] iam0x52
+@KogaroshiDM
+
+
+[10/30/2022 13:35] kogaroshi
+Accepted
+
+
+[10/30/2022 15:58] jm217
+@Kogaroshi DM please
+
+
+[10/30/2022 20:02] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens  The **Paladin - Warden Pledges **contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+{Reactions}
+🚀 (13) 
+
+[10/31/2022 20:54] xyzbtchunt
+How many weeks will the prize be announced?
+
+
+[10/31/2022 22:02] 0xsmartcontract
+Min one month
+
+
+[12/01/2022 06:30] xyzbtchunt
+Any update?
+
+
+[12/06/2022 21:01] jm217
+https://discord.com/channels/810916927919620096/1034129127806091304/1048674354067685406
+
+{Reactions}
+👍 
+
+[12/06/2022 22:09] kirk_baird
+The contest is judged just sorting a few minor things to make sure awards are calculated correctly
+
+
+[12/06/2022 22:37] ch0bu
+https://github.com/code-423n4/code423n4.com/pull/5839/commits/4d9284f530bd23e207c7eaff9e4e3573028cd31a
+
+{Embed}
+https://github.com/code-423n4/code423n4.com/pull/5839/commits/4d9284f530bd23e207c7eaff9e4e3573028cd31a
+Add contest results by CloudEllie · Pull Request #5839 · code-423n4...
+Code4rena - ARCHIVE-Q4-2022 - paladin-oct27 [1034130919507890287].txt_Files/84729667-C9F7E
+
+{Reactions}
+👀 
+
+[12/07/2022 01:38] itsmetechjay
+🤑 🎉 Awards for **Paladin**:
+
+$5,748.10 USDC » @0x52 
+$5,659.93 USDC » @cccz 
+$3,014.07 USDC » @Trust 
+$1,863.05 USDC » @bin2chen 
+$1,315.57 USDC » @Chom 
+$1,314.25 USDC » @pashov 
+$1,241.67 USDC » @indijanc 
+$1,193.41 USDC » @Jeiwan 
+$796.31 USDC » @Picodes | Angle 
+$754.53 USDC » @KingNFT 
+$557.88 USDC » @0x1f8b 
+$518.20 USDC » @rbserver 
+$500.83 USDC » @0xDjango 
+$391.72 USDC » @0xSmartContract 
+$346.19 USDC » @Ruhum 
+$344.58 USDC » @Roman 
+$324.22 USDC » @code-cipher 
+$310.35 USDC » @RaymondFam 
+$267.88 USDC » @ctf_sec 
+$257.43 USDC » @hansfriese 
+$247.53 USDC » @codexploder 
+$242.47 USDC » @robee 
+$198.03 USDC » @cylzxje 
+$198.03 USDC » @RedOneN 
+$196.42 USDC » @cryptonue 
+$186.51 USDC » @Josiah 
+$181.35 USDC » @c3phas 
+$144.20 USDC » @ReyAdmirado 
+$144.20 USDC » @carlitox477 
+$144.20 USDC » @ajtra 
+$41.78 USDC » @Dravee 
+$41.78 USDC » @Bnke 
+$41.78 USDC » @imare
+$41.78 USDC » @horsefacts 
+$33.24 USDC » @0xladboy | Sparkware 
+$31.87 USDC » @Mathieu 
+$31.87 USDC » @0xwhiteDevil 
+$31.87 USDC » @neko_nyaaaaaaaaaaaaaaaaaaaaaaaaa 
+$31.87 USDC » @Awesome 
+$31.87 USDC » @thinklab 
+$31.87 USDC » @ch0bu 
+$31.87 USDC » @__141345__ 
+$31.87 USDC » @shark 
+$31.87 USDC » @0xNazgul 
+$31.87 USDC » @Waze 
+$31.87 USDC » @lukris02 
+$31.87 USDC » @B2
+$31.87 USDC » @djxploit 
+$31.87 USDC » @tnevler 
+$31.87 USDC » @adriro 
+$30.26 USDC » @rvierdiiev 
+$30.26 USDC » @csanuragjain 
+$30.26 USDC » @dic0de 
+$30.26 USDC » @JTJabba 
+$30.26 USDC » @peritoflores 
+$25.31 USDC » @yixxas 
+$20.36 USDC » @chrisdior4 
+$20.36 USDC » @chaduke 
+$20.36 USDC » @8olidity 
+$20.36 USDC » @Rolezn 
+$20.36 USDC » @jayphbee 
+$20.36 USDC » @0x007 
+$20.36 USDC » @Diana 
+$20.36 USDC » @Shawn 
+$20.36 USDC » @Sm4rty 
+$20.36 USDC » @a12jmx 
+$20.36 USDC » @Tricko 
+$20.36 USDC » @RaoulSchaffranek 
+$20.36 USDC » @delfin454000 
+$20.36 USDC » @brgltd 
+$11.52 USDC » ballx
+$11.52 USDC » @skyle 
+$11.52 USDC » @durianSausage 
+$11.52 USDC » @0xbepresent 
+$11.52 USDC » @EricTee 
+$11.52 USDC » @emrekocak 
+$11.52 USDC » @karanctf 
+$11.52 USDC » @gkrastenov 
+$11.52 USDC » @SadBase 
+$11.52 USDC » @Amithuddar 
+$11.52 USDC » @0xRoxas 
+$11.52 USDC » @SooYa 
+$11.52 USDC » RockingMiles (@robee, @pants)
+$11.52 USDC » @gogo 
+$11.52 USDC » KoKo
+$11.52 USDC » @peiw 
+$11.52 USDC » @subtle77 
+$11.52 USDC » @sakman 
+$9.91 USDC » @Nyx 
+$9.91 USDC » @wagmi 
+$9.91 USDC » @Deleted User 
+$9.91 USDC » @0xv0id 
+$9.91 USDC » @minhtrng 
+
+🏁 Findings summary
+---------------------------
+Med risk findings: 56 total, 8 unique
+Gas findings: 49 
+ QA findings: 63
+
+Awards will be distributed on Polygon within the next 1-2 weeks. Congratulations all! 💸 💸 💸 
+
+***Note: If you participated in this contest and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.***
+
+{Reactions}
+C4Keycap (8) ✅ 
+
+[12/07/2022 02:50] carlitox477
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2022 - paladin-oct27 [1034130919507890287].txt_Files/image0-6A825.gif
+
+
+[12/07/2022 17:03] itsmetechjay
+Please note that the award announcement above has been updated.  See this post in #🐺wardens for more info: https://discord.com/channels/810916927919620096/810936719003090974/1050070705154314301
+
+
+[12/08/2022 03:56] itsmetechjay
+We discovered after further review that we missed 5 valid reports, so we have updated the leaderboard accordingly. All payouts will match what was posted above, but the following wardens will receive an additional payout of $20.36 USDC: 
+@jwood 
+@corerouter 
+@comradeKtg 
+@0x52 
+@minhtrng
+
+{Reactions}
+🎉 (4) 
+
+[12/13/2022 13:02] comradektg
+hi Jay, I haven't received award for this, can you check?
+
+
+[12/13/2022 15:03] itsmetechjay
+Will look into it!
+
+{Reactions}
+hi5 
+
+[12/13/2022 21:10] itsmetechjay
+You should see that in your wallet soon - got it sent today!
+
+
+[12/14/2022 04:22] comradektg
+Award received, thanks Jay
+
+{Reactions}
+💰 (4) hi5 
+
+==============================================================
+Exported 82 message(s)
+==============================================================
